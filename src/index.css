@@ -4,9 +4,11 @@
     align-items: center;
     margin-top: 80px;
 }
-.like_wrap-like {
+.like_wrap-thumb {
+	cursor: pointer;
 
 }
+.llike_wrap-thumb .iconfont,
 .like_wrap-num {
-
+	color: #af87ff;
 }

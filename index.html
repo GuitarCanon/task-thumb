@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/index.css">
+	<link rel="stylesheet" href="./src/index.css">
+	<link rel="stylesheet" href="./src/iconfont.css">
 </head>
 <body>  
     <div class="like_wrap">
-        <button id="thumb" class="like_wrap-thumb">点赞</button>
+        <a id="thumb" class="like_wrap-thumb"><span class="iconfont icon-thumb-big"></span></a>
         <p id="num" class="like_wrap-num"></p>
-    </div>
-    <!-- <script>
-        var SystemJs = require("systemjs");
-        SystemJs.import('./lib/index.js').then(function(m) {
-            console.log(m);
-        })
-    </script> -->
-    <script src="./lib/index.js"></script>
+	</div>
+	<script src="systemjs/dist/system.js"></script>
+	<script>
+		SystemJS.import('/task-thumb/lib/index.js');
+	</script>
 </body>
 </html>
