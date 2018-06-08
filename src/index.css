@@ -8,7 +8,9 @@
 	cursor: pointer;
 
 }
-.llike_wrap-thumb .iconfont,
+.icon-thumb-big {
+	color: #af87ff!important;
+}
 .like_wrap-num {
-	color: #af87ff;
+	color: #af87ff!important;
 }
