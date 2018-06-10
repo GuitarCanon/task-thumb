@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-	<link rel="stylesheet" href="./css/iconfont.css">
-	<link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-<body>  
+
+<body>
     <div class="like_wrap">
-        <a id="thumb" class="like_wrap-thumb"><span class="iconfont icon-thumb-big"></span></a>
-        <p id="num" class="like_wrap-num"></p>
+        <a id="thumb" class="like_wrap-thumb">
+            <span class="iconfont icon-thumb-big"></span>
+        </a>
+        <p id="num" class="like_wrap-num">0</p>
     </div>
     <script src="./scripts/jquery.js"></script>
-	<script src="./scripts/system.js"></script>
+    <script src="./scripts/system.js"></script>
+    <script src="./index.js"></script>
+    <script>
+        SystemJS.import('/task-thumb/scripts/compiled.js').then(function (m) {
+            $.extend({
+                thumb: m.default
+            })
+            callBack();
+        });
+        function callBack() {
+            var fn = new $.thumb(0, $("#thumb"), $("#num"));
+            fn.clickAction();
+        }
+    </script>
 </body>
+
 </html>

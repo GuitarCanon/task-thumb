@@ -1,26 +1,30 @@
 class Praise {
-    constructor(num) {
+    constructor(num, btnElement, numElement) {
         this.num = num;
+        this.btnElement = btnElement;
+        this.numElement = numElement;
     }
-    like() {
-        this.num ++;
+    clickAction() {
+        this.btnElement.click(() => {
+            if (this.num < 10) {
+                this.num = add(this.num);
+                this.btnElement.css("color", "#af87ff");
+                this.numElement.css("color", "#af87ff");
+                this.numElement.html(this.num);
+            } else {
+                this.num = 0;
+                this.btnElement.css("color", "#000");
+                this.numElement.css("color", "#000");
+                this.numElement.html(0);
+            }
+            console.log(this.num);
+        })
     }
 }
 class Thumb extends Praise {
-    constructor(num) {
-        super(num);
+    constructor(num, btnElement, numElement) {
+        super(num, btnElement, numElement);
     }
 }
 
-
-let liking = new Thumb(0);
-let thumb = document.getElementById('thumb');
-let num = document.getElementById('num');
-window.onload = function() {
-    num.innerHTML = liking.num;
-}
-
-thumb.addEventListener('click', function() {
-    liking.like();
-    num.innerHTML = liking.num;
-})
+export default Thumb;
